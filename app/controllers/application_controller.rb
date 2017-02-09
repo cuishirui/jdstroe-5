@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     return cart
   end
+
+  def checkout
+    @order = Order.new 
+  end
 end
