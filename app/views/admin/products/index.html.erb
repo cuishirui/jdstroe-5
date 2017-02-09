@@ -1,0 +1,23 @@
+<h1 class="text-center">Product List</h1>
+<table class="table table-bordered" style="table-hover">
+  <thead>
+    <tr>
+      <th>title</th>
+      <th>description</th>
+      <th>quantity</th>
+      <th>price</th>
+      <th>Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.title, admin_product_path(product)%></td>
+        <td><%= product.description%></td>
+        <td><%= product.quantity%></td>
+        <td><%= product.price%></td>
+        <td><%= link_to("Edit",edit_admin_product_path(product))%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
